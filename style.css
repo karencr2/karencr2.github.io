@@ -1,0 +1,79 @@
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Fundo preto */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff; /* Cor de texto branco */
+  }
+  
+  /* Estilo do container principal */
+  .container {
+    background-color: #111; /* Fundo quase preto */
+    padding: 40px;
+    border-radius: 15px; /* Cantos arredondados */
+    text-align: center;
+    width: 90%;
+    max-width: 500px; /* Aumenta a largura máxima da caixa */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra da caixa */
+  }
+  
+  /* Estilo da foto */
+  #minha-foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 0px solid #2196F3; /* Borda azul */
+    object-fit: cover;
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+  }
+  
+  /* Estilo do cabeçalho e texto */
+  .profile h1 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #2196F3; /* Azul para destaque no nome */
+  }
+  
+  .profile p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ddd; /* Texto mais claro */
+  }
+
+
+  /* Seção de ícones sociais */
+  .social-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os ícones */
+  }
+  
+  /* Estilo dos ícones */
+  .social-icons a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333; /* Fundo escuro para os ícones */
+    border-radius: 50%;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
+    background-color: #2196F3; /* Cor de fundo azul no hover */
+  }
+  
+  .social-icons svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff; /* Cor branca para os ícones */
+  }
+  
