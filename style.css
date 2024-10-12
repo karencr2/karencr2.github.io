@@ -1,19 +1,19 @@
 /* Estilo global */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #000; /* Fundo preto */
+    background-color: #000; 
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #fff; /* Cor de texto branco */
+    color: #fff; 
   }
   
   /* Estilo do container principal */
   .container {
-    background-color: #111; /* Fundo quase preto */
+    background-color: #222; 
     padding: 40px;
     border-radius: 15px; /* Cantos arredondados */
     text-align: center;
@@ -27,16 +27,16 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 0px solid #2196F3; /* Borda azul */
+    border: 1px solid #2196F3; 
     object-fit: cover;
-    margin-bottom: 20px; /* Espaço abaixo da imagem */
+    margin-bottom: 20px; 
   }
   
   /* Estilo do cabeçalho e texto */
   .profile h1 {
     margin-bottom: 15px;
     font-size: 28px;
-    color: #2196F3; /* Azul para destaque no nome */
+    color: #2196F3; 
   }
   
   .profile p {
@@ -51,7 +51,7 @@ body {
     margin-top: 30px;
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espaçamento entre os ícones */
+    gap: 20px; 
   }
   
   /* Estilo dos ícones */
@@ -61,14 +61,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333; /* Fundo escuro para os ícones */
+    background-color: #333; 
     border-radius: 50%;
     transition: transform 0.3s, background-color 0.3s;
   }
   
   .social-icons a:hover {
     transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
-    background-color: #2196F3; /* Cor de fundo azul no hover */
+    background-color: #2196F3; 
   }
   
   .social-icons svg {
