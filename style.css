@@ -78,14 +78,3 @@ body {
     height: 24px;
     fill: #fff;
 }
-
-/* Estilo da borboleta */
-.butterfly {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    z-index: 0; /* Para garantir que fique atrás da caixa */
-}
