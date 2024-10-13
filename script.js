@@ -3,12 +3,20 @@ const script = document.createElement('script');
 script.src = "https://unpkg.com/@lottiefiles/lottie-player@latest";
 document.head.appendChild(script);
 
-// Defina a área de exclusão (exemplo: um contêiner na parte superior)
+// Defina a área de exclusão (exemplo: um contêiner na parte superior e a caixa de descrições)
 const exclusionArea = {
   x: 100, // Posição x do contêiner
   y: 100, // Posição y do contêiner
   width: 600, // Largura do contêiner
   height: 300 // Altura do contêiner
+};
+
+// Exemplo de dimensões da caixa de descrição (ajuste conforme necessário)
+const descriptionBox = {
+  x: 50, // Posição x da caixa de descrição
+  y: 500, // Posição y da caixa de descrição
+  width: 700, // Largura da caixa de descrição
+  height: 150 // Altura da caixa de descrição
 };
 
 // Função para criar borboletas
@@ -56,11 +64,16 @@ function randomPosition() {
       y: Math.random() * (window.innerHeight - 320)  // Ajuste para o novo tamanho
     };
   } while (
-    position.x < exclusionArea.x + exclusionArea.width &&
-    position.x + 320 > exclusionArea.x &&
-    position.y < exclusionArea.y + exclusionArea.height &&
-    position.y + 320 > exclusionArea.y
-  ); // Verifica se a nova posição está dentro da área de exclusão
+    // Verifica se a nova posição está dentro da área de exclusão
+    (position.x < exclusionArea.x + exclusionArea.width &&
+      position.x + 320 > exclusionArea.x &&
+      position.y < exclusionArea.y + exclusionArea.height &&
+      position.y + 320 > exclusionArea.y) ||
+    (position.x < descriptionBox.x + descriptionBox.width &&
+      position.x + 320 > descriptionBox.x &&
+      position.y < descriptionBox.y + descriptionBox.height &&
+      position.y + 320 > descriptionBox.y) // Verifica sobreposição com a caixa de descrição
+  );
 
   return position;
 }
