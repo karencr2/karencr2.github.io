@@ -3,11 +3,16 @@ const script = document.createElement('script');
 script.src = "https://unpkg.com/@lottiefiles/lottie-player@latest";
 document.head.appendChild(script);
 
+// Defina a área de exclusão (exemplo: um contêiner na parte superior)
+const exclusionArea = {
+  x: 100, // Posição x do contêiner
+  y: 100, // Posição y do contêiner
+  width: 600, // Largura do contêiner
+  height: 300 // Altura do contêiner
+};
+
 // Função para criar borboletas
 function createButterflies(count) {
-  const occupiedPositions = []; // Array para armazenar posições ocupadas
-  const padding = 320; // Tamanho da borboleta
-
   for (let i = 1; i <= count; i++) {
     const butterfly = document.createElement('lottie-player');
     butterfly.className = 'butterfly butterfly-' + i;
@@ -24,7 +29,6 @@ function createButterflies(count) {
 
     // Gera uma nova posição aleatória
     const newPosition = randomPosition();
-    occupiedPositions.push(newPosition); // Armazena a nova posição
     butterfly.style.left = `${newPosition.x}px`;
     butterfly.style.top = `${newPosition.y}px`;
 
@@ -45,10 +49,20 @@ function moveButterfly(butterfly) {
 
 // Função para gerar posições aleatórias
 function randomPosition() {
-  return {
-    x: Math.random() * (window.innerWidth - 320),  // Ajuste para o novo tamanho
-    y: Math.random() * (window.innerHeight - 320)  // Ajuste para o novo tamanho
-  };
+  let position;
+  do {
+    position = {
+      x: Math.random() * (window.innerWidth - 320),  // Ajuste para o novo tamanho
+      y: Math.random() * (window.innerHeight - 320)  // Ajuste para o novo tamanho
+    };
+  } while (
+    position.x < exclusionArea.x + exclusionArea.width &&
+    position.x + 320 > exclusionArea.x &&
+    position.y < exclusionArea.y + exclusionArea.height &&
+    position.y + 320 > exclusionArea.y
+  ); // Verifica se a nova posição está dentro da área de exclusão
+
+  return position;
 }
 
 // Iniciar a criação de 8 borboletas
